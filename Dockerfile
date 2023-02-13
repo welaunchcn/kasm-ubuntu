@@ -31,7 +31,7 @@ RUN bash $INST_SCRIPTS/filezilla/install_filezilla.sh  && rm -rf $INST_SCRIPTS/f
 
 RUN wget https://dl.cloudsmith.io/public/asbru-cm/release/cfg/setup/bash.deb.sh && bash bash.deb.sh && rm bash.deb.sh
 
-RUN curl -fsSL https://dbeaver.io/debs/dbeaver.gpg.key | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/dbeaver.gpg
+RUN wget https://dbeaver.io/debs/dbeaver.gpg.key && sudo gpg dbeaver.gpg.key --dearmor -o /etc/apt/trusted.gpg.d/dbeaver.gpg && rm dbeaver.gpg.key
 RUN echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
 
 RUN sudo apt update
