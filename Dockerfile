@@ -31,16 +31,16 @@ RUN bash $INST_SCRIPTS/filezilla/install_filezilla.sh  && rm -rf $INST_SCRIPTS/f
 
 RUN wget https://dl.cloudsmith.io/public/asbru-cm/release/cfg/setup/bash.deb.sh && bash bash.deb.sh && rm bash.deb.sh
 
-RUN wget https://dbeaver.io/debs/dbeaver.gpg.key && sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/dbeaver.gpg dbeaver.gpg.key && rm dbeaver.gpg.key
-RUN echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
+RUN wget https://dbeaver.io/debs/dbeaver.gpg.key && gpg --dearmor -o /etc/apt/trusted.gpg.d/dbeaver.gpg dbeaver.gpg.key && rm dbeaver.gpg.key
+RUN echo "deb https://dbeaver.io/debs/dbeaver-ce /" | tee /etc/apt/sources.list.d/dbeaver.list
 
-RUN sudo apt update
-RUN sudo apt -y upgrade
-RUN sudo apt -y install iputils-ping git tmux nano zip xdotool
-RUN sudo apt -y install default-jdk
-RUN sudo apt -y install meld
-RUN sudo apt -y install asbru-cm
-RUN sudo apt -y install dbeaver-ce
+RUN apt update
+RUN apt -y upgrade
+RUN apt -y install iputils-ping git tmux nano zip xdotool
+RUN apt -y install default-jdk
+RUN apt -y install meld
+RUN apt -y install asbru-cm
+RUN apt -y install dbeaver-ce
 
 COPY ./src/common/startup_scripts/vnc_startup.sh $STARTUPDIR/
 
