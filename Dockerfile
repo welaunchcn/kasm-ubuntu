@@ -29,7 +29,9 @@ RUN bash $INST_SCRIPTS/only_office/install_only_office.sh  && rm -rf $INST_SCRIP
 COPY ./src/ubuntu/install/filezilla $INST_SCRIPTS/filezilla/
 RUN bash $INST_SCRIPTS/filezilla/install_filezilla.sh  && rm -rf $INST_SCRIPTS/filezilla/
 
-RUN curl -1sLf 'https://dl.cloudsmith.io/public/asbru-cm/release/cfg/setup/bash.deb.sh' | sudo -E bash
+RUN wget https://dl.cloudsmith.io/public/asbru-cm/release/cfg/setup/bash.deb.sh &&
+	bash bash.deb.sh &&
+	rm bash.deb.sh
 RUN curl -fsSL https://dbeaver.io/debs/dbeaver.gpg.key | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/dbeaver.gpg
 RUN echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
 
