@@ -2,5 +2,5 @@
 set -ex
 
 apt -y install meld
-cp org.gnome.meld.desktop $HOME/Desktop/
+cp /usr/share/applications/org.gnome.meld.desktop $HOME/Desktop/
 chmod +x $HOME/Desktop/org.gnome.meld.desktop
