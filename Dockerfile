@@ -15,6 +15,9 @@ ENV DOCKER_CHANNEL=stable \
 	DOCKER_COMPOSE_VERSION=1.29.2 \
 	DEBUG=false
 
+# Apt Update
+RUN apt update
+
 # Install Utils
 RUN apt -y install iputils-ping git tmux nano zip xdotool
 
