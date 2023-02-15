@@ -28,6 +28,14 @@ RUN apt -y install default-jdk
 COPY ./src/ubuntu/install/dotnet $INST_SCRIPTS/dotnet/
 RUN bash $INST_SCRIPTS/dotnet/install_dotnet.sh  && rm -rf $INST_SCRIPTS/dotnet/
 
+# Install Zsh
+COPY ./src/ubuntu/install/zsh $INST_SCRIPTS/zsh/
+RUN bash $INST_SCRIPTS/zsh/install_zsh.sh  && rm -rf $INST_SCRIPTS/zsh/
+
+# Install Mini Conda
+COPY ./src/ubuntu/install/miniconda $INST_SCRIPTS/miniconda/
+RUN bash $INST_SCRIPTS/miniconda/install_miniconda.sh  && rm -rf $INST_SCRIPTS/miniconda/
+
 # Install Visual Studio Code
 COPY ./src/ubuntu/install/vs_code $INST_SCRIPTS/vs_code/
 RUN bash $INST_SCRIPTS/vs_code/install_vs_code.sh  && rm -rf $INST_SCRIPTS/vs_code/
