@@ -67,8 +67,6 @@ RUN bash $INST_SCRIPTS/asbru_cm/install_asbru_cm.sh  && rm -rf $INST_SCRIPTS/asb
 # Upgrade packages
 RUN apt -y upgrade
 
-COPY ./src/common/startup_scripts/vnc_startup.sh $STARTUPDIR/
-
 ######### End Customizations ###########
 
 RUN chown 1000:0 $HOME
