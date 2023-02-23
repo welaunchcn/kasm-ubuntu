@@ -15,6 +15,9 @@ ENV DOCKER_CHANNEL=stable \
 	DOCKER_COMPOSE_VERSION=1.29.2 \
 	DEBUG=false
 
+# Prepare User Directory
+RUN mkdir Desktop Downloads Documents
+
 # Apt Update
 RUN apt update
 
