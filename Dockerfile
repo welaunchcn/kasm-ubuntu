@@ -1,7 +1,9 @@
 FROM kasmweb/core-cuda-focal:1.12.0
 USER root
 
-ENV HOME /root
+ENV DEBUG false
+ENV TZ Asia/Shanghai
+ENV HOME /home/kasm-user
 ENV STARTUPDIR /dockerstartup
 ENV INST_SCRIPTS $STARTUPDIR/install
 ENV VNC_OPTIONS -PublicIP=127.0.0.1
@@ -9,14 +11,6 @@ ENV VNC_OPTIONS -PublicIP=127.0.0.1
 WORKDIR $HOME
 
 ######### Customize Container Here ###########
-
-ENV DOCKER_CHANNEL=stable \
-	DOCKER_VERSION=20.10.9 \
-	DOCKER_COMPOSE_VERSION=1.29.2 \
-	DEBUG=false
-
-# Prepare User Directory
-RUN mkdir Desktop Downloads Documents
 
 # Apt Update
 RUN apt update
