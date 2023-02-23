@@ -8,9 +8,10 @@ ENV STARTUPDIR /dockerstartup
 ENV INST_SCRIPTS $STARTUPDIR/install
 ENV VNC_OPTIONS -PublicIP=127.0.0.1
 
-WORKDIR $HOME
+# Make User Home Dir
+mkdir -p $HOME $HOME/Desktop $HOME/Downloads $HOME/Documents
 
-######### Customize Container Here ###########
+WORKDIR $HOME
 
 # Apt Update
 RUN apt update
