@@ -9,7 +9,7 @@ ENV INST_SCRIPTS $STARTUPDIR/install
 ENV VNC_OPTIONS -PublicIP=127.0.0.1
 
 # Make User Home Dir
-mkdir -p $HOME $HOME/Desktop $HOME/Downloads $HOME/Documents
+RUN mkdir -p $HOME $HOME/Desktop $HOME/Downloads $HOME/Documents
 
 WORKDIR $HOME
 
