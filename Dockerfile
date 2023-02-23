@@ -1,10 +1,10 @@
 FROM kasmweb/core-cuda-focal:1.12.0
 USER root
 
-ENV HOME /home/kasm-default-profile
+ENV HOME /root
 ENV STARTUPDIR /dockerstartup
 ENV INST_SCRIPTS $STARTUPDIR/install
-ENV VNC_OPTIONS -PreferBandwidth -DynamicQualityMin=4 -DynamicQualityMax=7 -DLP_ClipDelay=0 -publicIP=127.0.0.1
+ENV VNC_OPTIONS -PublicIP=127.0.0.1
 
 WORKDIR $HOME
 
@@ -67,12 +67,4 @@ RUN bash $INST_SCRIPTS/asbru_cm/install_asbru_cm.sh  && rm -rf $INST_SCRIPTS/asb
 # Upgrade packages
 RUN apt -y upgrade
 
-######### End Customizations ###########
-
-RUN chown 1000:0 $HOME
-
-ENV HOME /home/kasm-user
-WORKDIR $HOME
-RUN mkdir -p $HOME && chown -R 1000:0 $HOME
-
-USER 1000
+ENTRYPOINT ["/dockerstartup/vnc_startup.sh", "--wait"]
