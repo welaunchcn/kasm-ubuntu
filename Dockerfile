@@ -26,10 +26,6 @@ RUN apt -y install default-jdk
 COPY ./src/ubuntu/install/dotnet $INST_SCRIPTS/dotnet/
 RUN bash $INST_SCRIPTS/dotnet/install_dotnet.sh  && rm -rf $INST_SCRIPTS/dotnet/
 
-# Install Zsh
-COPY ./src/ubuntu/install/zsh $INST_SCRIPTS/zsh/
-RUN bash $INST_SCRIPTS/zsh/install_zsh.sh  && rm -rf $INST_SCRIPTS/zsh/
-
 # Install Mini Conda
 COPY ./src/ubuntu/install/miniconda $INST_SCRIPTS/miniconda/
 RUN bash $INST_SCRIPTS/miniconda/install_miniconda.sh  && rm -rf $INST_SCRIPTS/miniconda/
