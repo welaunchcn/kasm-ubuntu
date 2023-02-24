@@ -1,0 +1,9 @@
+{
+    "checkForUpdatesAutomatically": false,
+    "installUpdatesAutomatically": false,
+    "syncJupyterLabTheme": false,
+    "showNewsFeed": false,
+    "serverArgs": "--allow-root",
+    "serverEnvVars": {},
+    "startupMode": "restore-sessions"
+  }
