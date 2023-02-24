@@ -8,4 +8,5 @@ rm JupyterLab-Setup-Debian.deb
 sed -i 's#/opt/JupyterLab/jupyterlab-desktop#/opt/JupyterLab/jupyterlab-desktop --no-sandbox --disable-setuid-sandbox#' /usr/share/applications/jupyterlab-desktop.desktop
 cp /usr/share/applications/jupyterlab-desktop.desktop $HOME/Desktop
 chmod +x $HOME/Desktop
+mkdir -p $HOME/.config/jupyterlab-desktop
 cp /dockerstartup/install/jupyterlab_desktop_settings.json $HOME/.config/jupyterlab-desktop/settings.json
