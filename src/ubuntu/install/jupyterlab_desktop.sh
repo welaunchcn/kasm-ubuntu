@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -ex
 
+apt -y install xdg-utils
 wget https://github.com/jupyterlab/jupyterlab-desktop/releases/latest/download/JupyterLab-Setup-Debian.deb
 dpkg -i JupyterLab-Setup-Debian.deb
 rm JupyterLab-Setup-Debian.deb
