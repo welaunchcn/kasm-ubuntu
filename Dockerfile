@@ -13,6 +13,9 @@ RUN mkdir -p $HOME $HOME/Desktop $HOME/Downloads $HOME/Documents
 
 WORKDIR $HOME
 
+# Set Aliyun Mirror
+RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple
+
 # Apt Update
 RUN apt update
 
