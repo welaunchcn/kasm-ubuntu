@@ -13,14 +13,12 @@ RUN mkdir -p $HOME $HOME/Desktop $HOME/Downloads $HOME/Documents
 
 WORKDIR $HOME
 
-# Set Aliyun Mirror
-RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple
-
 # Apt Update
 RUN apt update
 
 # Install Utils
 RUN apt -y install iputils-ping git tmux nano zip xdotool
+RUN git config --global user.name user && git config --global user.email user@mail.com
 
 # Install JDK
 RUN apt -y install default-jdk

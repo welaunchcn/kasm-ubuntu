@@ -6,4 +6,4 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/
 bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm -rf ~/miniconda3/miniconda.sh
 ~/miniconda3/bin/conda init bash
-~/miniconda3/bin/conda init zsh
+~/miniconda3/bin/pip config set global.index-url https://mirrors.aliyun.com/pypi/simple
