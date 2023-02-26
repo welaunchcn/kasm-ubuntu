@@ -27,34 +27,34 @@ RUN apt -y install default-jdk
 COPY ./src/ubuntu/install $INST_SCRIPTS/
 
 # Install DotNet
-RUN bash $INST_SCRIPTS/dotnet/install_dotnet.sh
+RUN bash $INST_SCRIPTS/dotnet.sh
 
 # Install Mini Conda
-RUN bash $INST_SCRIPTS/miniconda/install_miniconda.sh
+RUN bash $INST_SCRIPTS/miniconda.sh
 
 # Install JupyterLab Desktop
 RUN bash $INST_SCRIPTS/jupyterlab_desktop.sh
 
 # Install Visual Studio Code
-RUN bash $INST_SCRIPTS/vs_code/install_vs_code.sh
+RUN bash $INST_SCRIPTS/vs_code.sh
 
 # Install Google Chrome
-RUN bash $INST_SCRIPTS/chrome/install_chrome.sh
+RUN bash $INST_SCRIPTS/chrome.sh
 
 # Install Only Office
-RUN bash $INST_SCRIPTS/only_office/install_only_office.sh
+RUN bash $INST_SCRIPTS/only_office.sh
 
 # Install Filezilla
-RUN bash $INST_SCRIPTS/filezilla/install_filezilla.sh
+RUN bash $INST_SCRIPTS/filezilla.sh
 
 # Install DBeaver
-RUN bash $INST_SCRIPTS/dbeaver/install_dbeaver.sh
+RUN bash $INST_SCRIPTS/dbeaver.sh
 
 # Install Meld
-RUN bash $INST_SCRIPTS/meld/install_meld.sh
+RUN bash $INST_SCRIPTS/meld.sh
 
 # Install Asbru CM
-RUN bash $INST_SCRIPTS/asbru_cm/install_asbru_cm.sh
+RUN bash $INST_SCRIPTS/asbru_cm.sh
 
 # Upgrade packages
 RUN apt -y upgrade
