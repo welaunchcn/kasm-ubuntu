@@ -23,8 +23,10 @@ RUN git config --global user.name user && git config --global user.email user@ma
 # Install JDK
 RUN apt -y install default-jdk
 
-# Copy Install Scripts
+# Copy Scripts
 COPY ./src/ubuntu/install $INST_SCRIPTS/
+COPY ./src/common/install/kasm_vnc/kasmvnc.yaml /etc/kasmvnc/
+COPY ./src/common/startup_scripts/vnc_startup.sh $STARTUPDIR/
 
 # Install DotNet
 RUN bash $INST_SCRIPTS/dotnet.sh
