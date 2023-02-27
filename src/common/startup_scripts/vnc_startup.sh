@@ -133,6 +133,12 @@ if [[ $DEBUG == true ]]; then
     echo "IP Address used for external bind: $VNC_IP"
 fi
 
+# Create cert for KasmVNC
+if [[ ! -f ${HOME}/.vnc/self.pem ]]; then
+	mkdir -p ${HOME}/.vnc
+	openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout ${HOME}/.vnc/self.pem -out ${HOME}/.vnc/self.pem -subj "/C=US/ST=VA/L=None/O=None/OU=DoFu/CN=kasm/emailAddress=none@none.none"
+fi
+
 # first entry is control, second is view (if only one is valid for both)
 mkdir -p "$HOME/.vnc"
 PASSWD_PATH="$HOME/.kasmpasswd"

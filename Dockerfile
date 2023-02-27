@@ -25,7 +25,6 @@ RUN apt -y install default-jdk
 
 # Copy Scripts
 COPY ./src/ubuntu/install $INST_SCRIPTS/
-COPY ./src/common/install/kasm_vnc/kasmvnc.yaml /etc/kasmvnc/
 COPY ./src/common/startup_scripts/vnc_startup.sh $STARTUPDIR/
 
 # Install DotNet
